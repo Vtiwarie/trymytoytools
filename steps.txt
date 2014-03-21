@@ -1,0 +1,6 @@
+ADMIN
+
+1. Disable cache if debugging in "System > Cache management"
+
+2. Enable Developer debugging in "System > Developer".  Select site name and in section 
+	"Debug" choose Yes from dropdown "Template Path Hints" and "Add Block Names to Hints"
