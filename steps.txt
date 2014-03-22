@@ -1,6 +1,31 @@
 ADMIN
 
+1. Copy blanco files to server as stated in the PDF
+
+1. choose "blanco" on all fields in "System > Configuration > Design > Theme"
+
+2. Clear cache
+
+
+
+DEBUGGING
+
 1. Disable cache if debugging in "System > Cache management"
 
 2. Enable Developer debugging in "System > Developer".  Select site name and in section 
 	"Debug" choose Yes from dropdown "Template Path Hints" and "Add Block Names to Hints"
+
+	
+
+
+MOVING MAGENTO TO ANOTHER SERVER
+
+1. Delete the content of the folder /var
+
+2. Change the values of the file /app/etc/local.xml There you can find your connection string data (database user, host and name).
+
+3. Once you got your database uploaded, you need to make some changes.
+
+		SELECT * FROM core_config_data WHERE path = 'web/unsecure/base_url' OR path = 'web/secure/base_url';
+		
+		UPDATE core_config_data SET value = 'http://www.somedomain.com/' WHERE path LIKE 'web/%/base_url';
